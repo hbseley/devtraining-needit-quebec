@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <category>ccde424173f0330018dd3ae234f6a7bf</category>
+        <channels/>
+        <connect_queue/>
+        <description>This topic allows the Employee to update his/her home address in HR profile.</description>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.31",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "44c5295263004a919ec7dd5009bfb07a": {
+          "id": "44c5295263004a919ec7dd5009bfb07a",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "9dac62c62450449683f4a52953cc8c84": {
+          "id": "9dac62c62450449683f4a52953cc8c84",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "013ad87782b54f399cba5d16fdb9e4bb": {
+          "id": "013ad87782b54f399cba5d16fdb9e4bb",
+          "stepType": "LookupRecord",
+          "name": "User profile",
+          "condition": {
+            "mode": "glide_query",
+            "value": "user={{vaInputs.user}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "f87aa4a55766415799ac34574b84ddae"
+        },
+        "f482973ce9b346f8b2dea8eacaba6ac7": {
+          "id": "f482973ce9b346f8b2dea8eacaba6ac7",
+          "stepType": "ScriptOutput",
+          "name": "Get current address",
+          "output_type": "single_part",
+          "script": "(function execute() {\n    var profileGr = new GlideRecord('sn_hr_core_profile');\n     profileGr.addQuery('sys_id', vaInputs.user_profile);\n     profileGr.query();\n     vaVars.currentAddressMessage=\"\";\n     if(profileGr.next()){\n        vaVars.currentAddress = profileGr.getDisplayValue('address');\n        if(vaVars.currentAddress!=\"\")\n        vaVars.currentAddressMessage = gs.getMessage(\"This is the address we have on file for you: \");\n     }\n     else\n     vaVars.currentAddressMessage = \"\";\n})()\n",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "d54a926bf7fa402fbae0db6de2311f30": {
+          "id": "d54a926bf7fa402fbae0db6de2311f30",
+          "stepType": "HtmlOutput",
+          "name": "Display current address message",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    {{vaVars.currentAddressMessage}}\n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": {
+            "mode": "script",
+            "value": "(function execute() {\n    if(vaVars.currentAddressMessage!=\"\")\n    return true;\n    return false;\n})()\n"
+          }
+        },
+        "1eaf0794da0b4945a61acb9eae3b18da": {
+          "id": "1eaf0794da0b4945a61acb9eae3b18da",
+          "stepType": "Prompt",
+          "name": "New Address",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "text": "What should your address be instead (max. 255 characters)?"
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "01c1418ea76147be831d36c6db0dc58d",
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "entity": {
+            "id": ""
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "2ca38f60fc154d388ae32486d447ead4": {
+          "id": "2ca38f60fc154d388ae32486d447ead4",
+          "stepType": "CrudAction",
+          "name": "Update address",
+          "template": "address={{vaInputs.new_address}}",
+          "mode": "update",
+          "record": "f87aa4a55766415799ac34574b84ddae",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "c8a95d3c1685408aa954f696d5acbb7d"
+        },
+        "d6850017207f441ca129d6826cf71ebb": {
+          "id": "d6850017207f441ca129d6826cf71ebb",
+          "stepType": "ScriptOutput",
+          "name": "Address length check",
+          "output_type": "single_part",
+          "script": "(function execute() {\n    \n    if(vaInputs.new_address.getValue()){\n        vaVars.addressLength = vaInputs.new_address.getValue().length;\n        gs.info(\"vaVars.addressLength\"+vaVars.addressLength);\n        if(vaVars.addressLength &gt; 255 || vaVars.addressLength == 0)\n            vaVars.isAddressBigOrNull = true; \n        else\n            vaVars.isAddressBigOrNull = false;\n    }\n    else\n    vaVars.isAddressBigOrNull = true;\n    return '';\n})()\n",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "afd4ec6d85624a4e8fc8c1fa23050d8b": {
+          "id": "afd4ec6d85624a4e8fc8c1fa23050d8b",
+          "stepType": "Decision",
+          "name": "Is Address too long or null?"
+        },
+        "ea9a52f355f94b85a233bc4efc5675e0": {
+          "stepType": "ChoicePrompt",
+          "name": "User choice",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "text": "What would you like to do?"
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "48d5863a97dc4aab92e1068d77d0361f",
+          "id": "ea9a52f355f94b85a233bc4efc5675e0",
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "0c37eebe3870432b9b43dcc1adc363f4": {
+          "id": "0c37eebe3870432b9b43dcc1adc363f4",
+          "stepType": "Decision",
+          "name": "Update address required?"
+        },
+        "72587d357885460ba54442e9601dcd3a": {
+          "id": "72587d357885460ba54442e9601dcd3a",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "f85d819141ae45caa9b084077ddeb486": {
+          "id": "f85d819141ae45caa9b084077ddeb486",
+          "stepType": "TextOutput",
+          "name": "User profile not found",
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "text": "I did not find your profile information."
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "secure": false
+        },
+        "0e2d7ca56cd246f49f6b4d148e232715": {
+          "id": "0e2d7ca56cd246f49f6b4d148e232715",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "1ba0510deb0d40f489da5ff023feb353": {
+          "id": "1ba0510deb0d40f489da5ff023feb353",
+          "stepType": "RecordOutput",
+          "name": "Display current address ",
+          "variableId": "",
+          "mode": "script",
+          "tableName": "sn_hr_core_profile",
+          "fields": [
+            "address"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_id={{vaInputs.user_profile.sys_id}}"
+          },
+          "cardTemplate": "General",
+          "cardFields": {},
+          "cardDefinition": {}
+        },
+        "3c8910413653482e90f0fad6c59ae04c": {
+          "id": "3c8910413653482e90f0fad6c59ae04c",
+          "stepType": "LookupRecord",
+          "name": "Update Tax Forms",
+          "condition": {
+            "mode": "glide_query",
+            "value": "payroll_country=United States"
+          },
+          "applicability": {
+            "mode": "query",
+            "value": ""
+          },
+          "variableId": "cd56e391e6fa43029e44bcb0f31c57c2"
+        },
+        "259e52f152f04f36820cbb56ffb6a102": {
+          "id": "259e52f152f04f36820cbb56ffb6a102",
+          "stepType": "LinkOutput",
+          "name": "Tax Form Info",
+          "url": {
+            "mode": "simple",
+            "value": ""
+          },
+          "label": {
+            "mode": "simple",
+            "value": ""
+          },
+          "header": {
+            "mode": "simple",
+            "value": ""
+          },
+          "applicability": {
+            "value": "vaInputs.tax_form_update=yes",
+            "mode": "query"
+          },
+          "linkType": "multiple",
+          "introMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.update_tax_forms}}",
+                      "displayValue": "Input Variables➛Update Tax Forms"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.update_tax_forms.payroll_country}}",
+                      "displayValue": "Input Variables➛Update Tax Forms➛Payroll country"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "listOfLinks": "(function execute(updateAddress) {\n    \n       var groupedLinksOutMsg = new sn_cs.GroupedPartsOutMsg();\n       groupedLinksOutMsg.setHeader(updateAddress);\n       groupedLinksOutMsg.addLinkPart('Sample I-9 Form', 'https://www.uscis.gov/sites/default/files/document/forms/i-9.pdf', 'You will have to update section 1 of your I-9 Form', 'HRSD');\n       groupedLinksOutMsg.addLinkPart('I-9 Form Instructions', 'https://www.uscis.gov/sites/default/files/document/forms/i-9instr.pdf', 'Here are instructions on how to complete the I-9 Form', 'KB');\n       return groupedLinksOutMsg;\n   \n})(updateAddress)\n"
+        },
+        "c52a213fc6fb41c383175daa7fc928f7": {
+          "id": "c52a213fc6fb41c383175daa7fc928f7",
+          "stepType": "TextOutput",
+          "name": "Display confirmation message",
+          "value": {
+            "value": "(function execute() {\n    return gs.getMessage(\"I've updated your address to {0}\",vaInputs.new_address);\n})()\n",
+            "mode": "script"
+          },
+          "applicability": {
+            "mode": "script",
+            "value": ""
+          },
+          "secure": false
+        },
+        "a8acbe446c4c4bff9bf0d3ccd943bfda": {
+          "stepType": "ChoicePrompt",
+          "name": "Tax Form Update",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Would you like to update your tax forms?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "88d67d164f31455aaf72326a062052f8",
+          "id": "a8acbe446c4c4bff9bf0d3ccd943bfda",
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        }
+      },
+      "edges": [
+        {
+          "id": "33af2491c6524b688e942579326f6422",
+          "edgeType": "Edge",
+          "source": "3c8910413653482e90f0fad6c59ae04c",
+          "target": "a8acbe446c4c4bff9bf0d3ccd943bfda",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cd36fbb8cb2d4b6db936622a5374ea8f",
+          "edgeType": "Edge",
+          "source": "259e52f152f04f36820cbb56ffb6a102",
+          "target": "9dac62c62450449683f4a52953cc8c84",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "de30fc5499a04029b722b495059901e4",
+          "edgeType": "Branch",
+          "source": "afd4ec6d85624a4e8fc8c1fa23050d8b",
+          "target": "1eaf0794da0b4945a61acb9eae3b18da",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    return vaVars.isAddressBigOrNull;\n})()\n"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "c9f3ddf6766f456885384ea1eb784877",
+          "edgeType": "Edge",
+          "source": "44c5295263004a919ec7dd5009bfb07a",
+          "target": "013ad87782b54f399cba5d16fdb9e4bb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0e9aff6cdc2e4a5480c8e6863740bdbd",
+          "edgeType": "Edge",
+          "source": "1eaf0794da0b4945a61acb9eae3b18da",
+          "target": "d6850017207f441ca129d6826cf71ebb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e90c66cfb05b43ec8a4dd62fe40477c3",
+          "edgeType": "Edge",
+          "source": "d6850017207f441ca129d6826cf71ebb",
+          "target": "afd4ec6d85624a4e8fc8c1fa23050d8b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6102cee156bc4ab198dbcae5cac16971",
+          "edgeType": "Branch",
+          "source": "afd4ec6d85624a4e8fc8c1fa23050d8b",
+          "target": "2ca38f60fc154d388ae32486d447ead4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    return !vaVars.isAddressBigOrNull;\n})()\n"
+          },
+          "label": "No"
+        },
+        {
+          "id": "979e105ffc344bb48a7d0de963f7400e",
+          "edgeType": "Edge",
+          "source": "ea9a52f355f94b85a233bc4efc5675e0",
+          "target": "0c37eebe3870432b9b43dcc1adc363f4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "94de5ae84a1a44c39f2055126f9dab47",
+          "edgeType": "Branch",
+          "source": "0c37eebe3870432b9b43dcc1adc363f4",
+          "target": "1eaf0794da0b4945a61acb9eae3b18da",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "user_choice=update_address",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "68959424597d4ce0b231d819016adc01",
+          "edgeType": "Branch",
+          "source": "0c37eebe3870432b9b43dcc1adc363f4",
+          "target": "9dac62c62450449683f4a52953cc8c84",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "user_choice=keep_current_address",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "7cb7afca252e44928ea33617f94e514b",
+          "edgeType": "Edge",
+          "source": "013ad87782b54f399cba5d16fdb9e4bb",
+          "target": "72587d357885460ba54442e9601dcd3a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2f0991b7858440429abfbade6512257d",
+          "edgeType": "Branch",
+          "source": "72587d357885460ba54442e9601dcd3a",
+          "target": "f482973ce9b346f8b2dea8eacaba6ac7",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "user_profileISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "Profile Found"
+        },
+        {
+          "id": "06ba521a1a8d419e92f37b5169cd9d7a",
+          "edgeType": "Branch",
+          "source": "72587d357885460ba54442e9601dcd3a",
+          "target": "f85d819141ae45caa9b084077ddeb486",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "user_profileISEMPTY",
+            "mode": "query"
+          },
+          "label": "Profile Not Found"
+        },
+        {
+          "id": "4a6719fa4a164fb0b5aea36dfffc6e69",
+          "edgeType": "Edge",
+          "source": "f85d819141ae45caa9b084077ddeb486",
+          "target": "9dac62c62450449683f4a52953cc8c84",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ac6f77f6312d4e1da614ec7662998679",
+          "edgeType": "Edge",
+          "source": "f482973ce9b346f8b2dea8eacaba6ac7",
+          "target": "0e2d7ca56cd246f49f6b4d148e232715",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cc5a43abc1c543708d88c793de98a2bd",
+          "edgeType": "Branch",
+          "source": "0e2d7ca56cd246f49f6b4d148e232715",
+          "target": "d54a926bf7fa402fbae0db6de2311f30",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n   return (vaVars.currentAddress != \"\");\n})()\n"
+          },
+          "label": "Address Found"
+        },
+        {
+          "id": "5b4556e86fc14294beeb960334a57100",
+          "edgeType": "Branch",
+          "source": "0e2d7ca56cd246f49f6b4d148e232715",
+          "target": "1eaf0794da0b4945a61acb9eae3b18da",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    return (vaVars.currentAddress == \"\");\n})()\n"
+          },
+          "label": "Address Not found"
+        },
+        {
+          "id": "067d38aec62941319e06982281864ab6",
+          "edgeType": "Edge",
+          "source": "d54a926bf7fa402fbae0db6de2311f30",
+          "target": "1ba0510deb0d40f489da5ff023feb353",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c8ab33de66104f14889d83bcb9a1ad9a",
+          "edgeType": "Edge",
+          "source": "1ba0510deb0d40f489da5ff023feb353",
+          "target": "ea9a52f355f94b85a233bc4efc5675e0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "413eb76c44754a05a059a1e1b1eaad73",
+          "edgeType": "Edge",
+          "source": "2ca38f60fc154d388ae32486d447ead4",
+          "target": "c52a213fc6fb41c383175daa7fc928f7",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b454cbdd69994ee29392aef27686dcbd",
+          "edgeType": "Edge",
+          "source": "c52a213fc6fb41c383175daa7fc928f7",
+          "target": "3c8910413653482e90f0fad6c59ae04c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "455a5c5181f347948c7fe851e3f7ace3",
+          "edgeType": "Edge",
+          "source": "a8acbe446c4c4bff9bf0d3ccd943bfda",
+          "target": "259e52f152f04f36820cbb56ffb6a102",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "d2ba17b510e640e7869d744c76124ce6": {
+      "id": "d2ba17b510e640e7869d744c76124ce6",
+      "name": "LiveAgent_application",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "f23998b25ca94364991f88a018c77398": {
+      "id": "f23998b25ca94364991f88a018c77398",
+      "name": "LiveAgent_queue",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "59dc5ea800074315b46adcee1d802a4b": {
+      "id": "59dc5ea800074315b46adcee1d802a4b",
+      "name": "LiveAgent_hr_topic_id",
+      "value": {
+        "mode": "simple",
+        "value": "b080796c5388330088d9ddeeff7b12af"
+      },
+      "varType": "script",
+      "category": "vaVars",
+      "label": "LiveAgent_hr_topic_id"
+    },
+    "f87aa4a55766415799ac34574b84ddae": {
+      "id": "f87aa4a55766415799ac34574b84ddae",
+      "name": "user_profile",
+      "label": "User Profile",
+      "varType": "reference",
+      "table": "sn_hr_core_profile",
+      "category": "vaInputs"
+    },
+    "01c1418ea76147be831d36c6db0dc58d": {
+      "id": "01c1418ea76147be831d36c6db0dc58d",
+      "name": "new_address",
+      "label": "New Address",
+      "varType": "string",
+      "category": "vaInputs",
+      "secure": false,
+      "encryptionSalt": {
+        "value": "MTYyNzU3MDI2NDcyOSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "encryptionHashFunction": "SHA-256"
+    },
+    "c8a95d3c1685408aa954f696d5acbb7d": {
+      "id": "c8a95d3c1685408aa954f696d5acbb7d",
+      "name": "update_address",
+      "label": "Update Address",
+      "varType": "reference",
+      "table": "sn_hr_core_profile",
+      "inactive": true,
+      "category": "vaInputs"
+    },
+    "6a03090419fb4af4bab98287efb19a7d": {
+      "id": "6a03090419fb4af4bab98287efb19a7d",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "currentAddressMessage",
+      "label": "currentAddressMessage",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "24b316574fe94efdb48d08c8eaf5624b": {
+      "id": "24b316574fe94efdb48d08c8eaf5624b",
+      "value": {
+        "mode": "simple",
+        "value": "false"
+      },
+      "name": "isAddressBigOrNull",
+      "label": "isAddressBigOrNull",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "8dada3cad2ae4d13a7de111fd1d89204": {
+      "id": "8dada3cad2ae4d13a7de111fd1d89204",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "name": "addressLength",
+      "label": "addressLength",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "48d5863a97dc4aab92e1068d77d0361f": {
+      "id": "48d5863a97dc4aab92e1068d77d0361f",
+      "name": "user_choice",
+      "label": "User Choice",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Update address",
+          "value": "update_address"
+        },
+        {
+          "label": "Keep current address",
+          "value": "keep_current_address"
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "c4014864026147f1aea023146720bb2c": {
+      "id": "c4014864026147f1aea023146720bb2c",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "currentAddress",
+      "label": "currentAddress",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "f5e1950fef9d4c7cb119c10a9de1433a": {
+      "category": "vaInputs",
+      "id": "f5e1950fef9d4c7cb119c10a9de1433a",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "cd56e391e6fa43029e44bcb0f31c57c2": {
+      "id": "cd56e391e6fa43029e44bcb0f31c57c2",
+      "name": "update_tax_forms",
+      "label": "Update Tax Forms",
+      "varType": "reference",
+      "table": "sn_hr_ef_employee_document",
+      "category": "vaInputs"
+    },
+    "f8bf511ac01c40698a370638f6fd42fa": {
+      "id": "f8bf511ac01c40698a370638f6fd42fa",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "newState",
+      "label": "newState",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "f3dccbf590d943e68d831c879351d222": {
+      "id": "f3dccbf590d943e68d831c879351d222",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "oldState",
+      "label": "oldState",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "88d67d164f31455aaf72326a062052f8": {
+      "id": "88d67d164f31455aaf72326a062052f8",
+      "name": "tax_form_update",
+      "label": "Tax Form Update",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Update Address,Update Address (Template),Update,Address,Personal,Information,Current Address</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Update Address</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles>sn_hr_sp.hrsp_alumni,sn_hr_sp.hrsp_contingent,sn_hr_sp.hrsp_contractor,sn_hr_sp.hrsp_employee,sn_hr_sp.admin</roles>
+        <source_topic_id>b080796c5388330088d9ddeeff7b12af</source_topic_id>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-29 14:51:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>99083f832fa130106daee36ef699b6af</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Update Address</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_99083f832fa130106daee36ef699b6af</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-29 15:24:07</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=99083f832fa130106daee36ef699b6af"/>
+</record_update>
