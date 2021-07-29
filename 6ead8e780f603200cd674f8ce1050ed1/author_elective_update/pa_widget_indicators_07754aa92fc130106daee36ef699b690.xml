@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_widget_indicators">
+    <pa_widget_indicators action="DELETE">
+        <aggregate/>
+        <breakdown/>
+        <breakdown_level2/>
+        <chart_type>line</chart_type>
+        <color/>
+        <element/>
+        <element_level2/>
+        <elements_filter/>
+        <follow_element>false</follow_element>
+        <follow_managed_element>false</follow_managed_element>
+        <followed_breakdown/>
+        <indicator display_value="NeedIt: Active Weekly">7044292d2f4130106daee36ef699b60f</indicator>
+        <label/>
+        <order/>
+        <second_y_axis>false</second_y_axis>
+        <sys_class_name>pa_widget_indicators</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 18:09:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>07754aa92fc130106daee36ef699b690</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>pa_widget_indicators_07754aa92fc130106daee36ef699b690</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 18:09:01</sys_updated_on>
+        <widget display_value="Active NeedIt Requests this Week">4f3542a92fc130106daee36ef699b628</widget>
+        <widget_indicator/>
+    </pa_widget_indicators>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>3165a96cdbbad3007e55d5b0cf96194b</instance_id>
+        <instance_name>dev61626</instance_name>
+        <name>pa_widget_indicators_07754aa92fc130106daee36ef699b690</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_widget_indicators"><pa_widget_indicators action="INSERT_OR_UPDATE"><aggregate/><breakdown/><breakdown_level2/><chart_type>line</chart_type><color/><element/><element_level2/><elements_filter/><follow_element>false</follow_element><follow_managed_element>false</follow_managed_element><followed_breakdown/><indicator display_value="NeedIt: Active Weekly">7044292d2f4130106daee36ef699b60f</indicator><label/><order/><second_y_axis>false</second_y_axis><sys_class_name>pa_widget_indicators</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-06-29 18:09:01</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>07754aa92fc130106daee36ef699b690</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>pa_widget_indicators_07754aa92fc130106daee36ef699b690</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-06-29 18:09:01</sys_updated_on><widget display_value="Active NeedIt Requests this Week">4f3542a92fc130106daee36ef699b628</widget><widget_indicator/></pa_widget_indicators></record_update>]]></payload>
+        <payload_hash>-1686580052</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>94e6e1d02fc13010100ad49df699b6bf</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 18:09:02</sys_created_on>
+        <sys_id>e6854aa92fc130106daee36ef699b6bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a58f5cff90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 18:09:02</sys_updated_on>
+        <type>Widget Indicator</type>
+        <update_guid>22854aa9aec13010da58e55d003161bd</update_guid>
+        <update_guid_history>22854aa9aec13010da58e55d003161bd:-1686580052</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">e7e7a38b2f2130106daee36ef699b6c4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-29 13:41:11</sys_created_on>
+        <sys_db_object display_value="" name="pa_widget_indicators">pa_widget_indicators</sys_db_object>
+        <sys_id>5b3c46b9fe1f4711bf179356bbcbeb61</sys_id>
+        <sys_metadata>07754aa92fc130106daee36ef699b690</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete/>
+        <sys_update_name>pa_widget_indicators_07754aa92fc130106daee36ef699b690</sys_update_name>
+        <sys_update_version display_value="pa_widget_indicators_07754aa92fc130106daee36ef699b690">e6854aa92fc130106daee36ef699b6bd</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-29 13:41:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_tabs">
+    <pa_tabs action="DELETE">
+        <canvas_page display_value="PA NeedIt Application - New Tab">f269fded2f8130106daee36ef699b67f</canvas_page>
+        <name>NeedIt Application - New Tab</name>
+        <page display_value="PA NeedIt Application - New Tab">b669fded2f8130106daee36ef699b67e</page>
+        <sys_class_name>pa_tabs</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 17:16:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3269fded2f8130106daee36ef699b681</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt Application - New Tab</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>pa_tabs_3269fded2f8130106daee36ef699b681</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 17:16:04</sys_updated_on>
+    </pa_tabs>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>3165a96cdbbad3007e55d5b0cf96194b</instance_id>
+        <instance_name>dev61626</instance_name>
+        <name>pa_tabs_3269fded2f8130106daee36ef699b681</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_tabs"><pa_tabs action="INSERT_OR_UPDATE"><canvas_page display_value="PA NeedIt Application - New Tab">f269fded2f8130106daee36ef699b67f</canvas_page><name>NeedIt Application - New Tab</name><page display_value="PA NeedIt Application - New Tab">b669fded2f8130106daee36ef699b67e</page><sys_class_name>pa_tabs</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-06-29 17:16:04</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>3269fded2f8130106daee36ef699b681</sys_id><sys_mod_count>0</sys_mod_count><sys_name>NeedIt Application - New Tab</sys_name><sys_overrides/><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>pa_tabs_3269fded2f8130106daee36ef699b681</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-06-29 17:16:04</sys_updated_on></pa_tabs></record_update>]]></payload>
+        <payload_hash>-223143301</payload_hash>
+        <record_name>NeedIt Application - New Tab</record_name>
+        <reverted_from/>
+        <source>94e6e1d02fc13010100ad49df699b6bf</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 17:16:04</sys_created_on>
+        <sys_id>f669fded2f8130106daee36ef699b682</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a58c5532f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 17:16:04</sys_updated_on>
+        <type>Tab</type>
+        <update_guid>3269fded6d81301049d070306dc2f582</update_guid>
+        <update_guid_history>3269fded6d81301049d070306dc2f582:-223143301</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="NeedIt Application - New Tab">45f7278b2f2130106daee36ef699b6e7</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-29 13:41:18</sys_created_on>
+        <sys_db_object display_value="" name="pa_tabs">pa_tabs</sys_db_object>
+        <sys_id>c0a74591223a4462a9efbbe1d0ecb899</sys_id>
+        <sys_metadata>3269fded2f8130106daee36ef699b681</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt Application - New Tab</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete/>
+        <sys_update_name>pa_tabs_3269fded2f8130106daee36ef699b681</sys_update_name>
+        <sys_update_version display_value="pa_tabs_3269fded2f8130106daee36ef699b681">f669fded2f8130106daee36ef699b682</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-29 13:41:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

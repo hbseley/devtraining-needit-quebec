@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_indicator_breakdowns">
+    <pa_indicator_breakdowns action="DELETE">
+        <breakdown display_value="NeedIt Requests by Month Halves">cd7dc6612f0530106daee36ef699b625</breakdown>
+        <display>true</display>
+        <indicator display_value="NeedIt: Due Monthly">86d3a12d2f4130106daee36ef699b64c</indicator>
+        <order>200</order>
+        <sql_statement/>
+        <sys_class_name>pa_indicator_breakdowns</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 18:46:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cf0ece612f0530106daee36ef699b6df</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>NeedIt Requests by Month Halves.NeedIt: Due Monthly</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>pa_indicator_breakdowns_cf0ece612f0530106daee36ef699b6df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 18:59:33</sys_updated_on>
+    </pa_indicator_breakdowns>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>3165a96cdbbad3007e55d5b0cf96194b</instance_id>
+        <instance_name>dev61626</instance_name>
+        <name>pa_indicator_breakdowns_cf0ece612f0530106daee36ef699b6df</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_indicator_breakdowns"><pa_indicator_breakdowns action="INSERT_OR_UPDATE"><breakdown display_value="NeedIt Requests by Month Halves">cd7dc6612f0530106daee36ef699b625</breakdown><display>true</display><indicator display_value="NeedIt: Due Monthly">86d3a12d2f4130106daee36ef699b64c</indicator><order>200</order><sql_statement/><sys_class_name>pa_indicator_breakdowns</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-06-29 18:46:12</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>cf0ece612f0530106daee36ef699b6df</sys_id><sys_mod_count>3</sys_mod_count><sys_name>NeedIt Requests by Month Halves.NeedIt: Due Monthly</sys_name><sys_overrides/><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>pa_indicator_breakdowns_cf0ece612f0530106daee36ef699b6df</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-06-29 18:59:33</sys_updated_on></pa_indicator_breakdowns></record_update>]]></payload>
+        <payload_hash>2009819743</payload_hash>
+        <record_name>86d3a12d2f4130106daee36ef699b64c</record_name>
+        <reverted_from/>
+        <source>94e6e1d02fc13010100ad49df699b6bf</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 18:59:33</sys_created_on>
+        <sys_id>7611de252f0530106daee36ef699b696</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a592411670000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 18:59:33</sys_updated_on>
+        <type>Indicator Breakdown</type>
+        <update_guid>be11de25cb0530109986f23009414595</update_guid>
+        <update_guid_history>be11de25cb0530109986f23009414595:2009819743,a0b05a25ba053010eb1994dd89a96f3f:999153696,67909625f50530107e6a14b77c1845df:2009819743,5f0e02a1d105301011aa247896af2a64:999153696</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">6508eb8b2f2130106daee36ef699b60e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-29 13:41:36</sys_created_on>
+        <sys_db_object display_value="" name="pa_indicator_breakdowns">pa_indicator_breakdowns</sys_db_object>
+        <sys_id>ebe0ee7ee7b74093a6df429b2a603301</sys_id>
+        <sys_metadata>cf0ece612f0530106daee36ef699b6df</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt Requests by Month Halves.NeedIt: Due Monthly</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent display_value="">86d3a12d2f4130106daee36ef699b64c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete/>
+        <sys_update_name>pa_indicator_breakdowns_cf0ece612f0530106daee36ef699b6df</sys_update_name>
+        <sys_update_version display_value="pa_indicator_breakdowns_cf0ece612f0530106daee36ef699b6df">7611de252f0530106daee36ef699b696</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-29 13:41:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

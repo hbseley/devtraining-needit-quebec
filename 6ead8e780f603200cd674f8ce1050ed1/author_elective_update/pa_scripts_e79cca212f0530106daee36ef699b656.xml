@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_scripts">
+    <pa_scripts action="DELETE">
+        <arguments>u_when_needed</arguments>
+        <description>Extract the day of the month from the When Needed date</description>
+        <name>NeedIt.day</name>
+        <script><![CDATA[whichDay = function(){
+	
+	// Create a whenNeeded object from the GlideDateTime class. 
+	// The value of whenNeeded is the When needed date from the NeedIt record.
+	var whenNeeded = new GlideDateTime(current.u_when_needed);
+	
+	// Return the day of the month part of the whenNeeded object
+	return whenNeeded.getDayOfMonthLocalTime();
+	
+};
+
+whichDay;]]></script>
+        <sys_class_name>pa_scripts</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 18:43:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e79cca212f0530106daee36ef699b656</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt.day</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>pa_scripts_e79cca212f0530106daee36ef699b656</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 18:43:03</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+    </pa_scripts>
+    <sys_translated_text action="DELETE" query="documentkey=e79cca212f0530106daee36ef699b656"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>3165a96cdbbad3007e55d5b0cf96194b</instance_id>
+        <instance_name>dev61626</instance_name>
+        <name>pa_scripts_e79cca212f0530106daee36ef699b656</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="pa_scripts"&gt;&lt;pa_scripts action="INSERT_OR_UPDATE"&gt;&lt;arguments&gt;u_when_needed&lt;/arguments&gt;&lt;description&gt;Extract the day of the month from the When Needed date&lt;/description&gt;&lt;name&gt;NeedIt.day&lt;/name&gt;&lt;script&gt;&lt;![CDATA[whichDay = function(){
+	
+	// Create a whenNeeded object from the GlideDateTime class. 
+	// The value of whenNeeded is the When needed date from the NeedIt record.
+	var whenNeeded = new GlideDateTime(current.u_when_needed);
+	
+	// Return the day of the month part of the whenNeeded object
+	return whenNeeded.getDayOfMonthLocalTime();
+	
+};
+
+whichDay;]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;pa_scripts&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-06-29 18:43:03&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;e79cca212f0530106daee36ef699b656&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;NeedIt.day&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;pa_scripts_e79cca212f0530106daee36ef699b656&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-06-29 18:43:03&lt;/sys_updated_on&gt;&lt;table&gt;x_58872_needit_needit&lt;/table&gt;&lt;/pa_scripts&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e79cca212f0530106daee36ef699b656"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-776122070</payload_hash>
+        <record_name>NeedIt.day</record_name>
+        <reverted_from/>
+        <source>94e6e1d02fc13010100ad49df699b6bf</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 18:43:03</sys_created_on>
+        <sys_id>745dc6212f0530106daee36ef699b643</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a5914f3560000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 18:43:03</sys_updated_on>
+        <type>Script</type>
+        <update_guid>bc5dc621c3053010848b4bf50e893142</update_guid>
+        <update_guid_history>bc5dc621c3053010848b4bf50e893142:-776122070</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="NeedIt.day">2f086f8b2f2130106daee36ef699b6fd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-29 13:41:44</sys_created_on>
+        <sys_db_object display_value="" name="pa_scripts">pa_scripts</sys_db_object>
+        <sys_id>36f7cebd7aa14d03a97705ef4ff051f1</sys_id>
+        <sys_metadata>e79cca212f0530106daee36ef699b656</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt.day</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete/>
+        <sys_update_name>pa_scripts_e79cca212f0530106daee36ef699b656</sys_update_name>
+        <sys_update_version display_value="pa_scripts_e79cca212f0530106daee36ef699b656">745dc6212f0530106daee36ef699b643</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-29 13:41:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

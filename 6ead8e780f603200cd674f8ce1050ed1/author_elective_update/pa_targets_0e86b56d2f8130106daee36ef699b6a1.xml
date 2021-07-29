@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_targets">
+    <pa_targets action="DELETE">
+        <active>true</active>
+        <aggregate/>
+        <any_element>false</any_element>
+        <breakdown/>
+        <breakdown_level2/>
+        <color_scheme/>
+        <element/>
+        <element_level2/>
+        <indicator display_value="NeedIt: Active Weekly">7044292d2f4130106daee36ef699b60f</indicator>
+        <owner/>
+        <sys_class_name>pa_targets</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 17:03:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0e86b56d2f8130106daee36ef699b6a1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>7044292d2f4130106daee36ef699b60f</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>pa_targets_0e86b56d2f8130106daee36ef699b6a1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 17:03:55</sys_updated_on>
+        <values_modified_at>2021-06-29 17:03:55</values_modified_at>
+    </pa_targets>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>3165a96cdbbad3007e55d5b0cf96194b</instance_id>
+        <instance_name>dev61626</instance_name>
+        <name>pa_targets_0e86b56d2f8130106daee36ef699b6a1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_targets"><pa_targets action="INSERT_OR_UPDATE"><active>true</active><aggregate/><any_element>false</any_element><breakdown/><breakdown_level2/><color_scheme/><element/><element_level2/><indicator display_value="NeedIt: Active Weekly">7044292d2f4130106daee36ef699b60f</indicator><owner/><sys_class_name>pa_targets</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-06-29 17:03:27</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>0e86b56d2f8130106daee36ef699b6a1</sys_id><sys_mod_count>2</sys_mod_count><sys_name>7044292d2f4130106daee36ef699b60f</sys_name><sys_overrides/><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>pa_targets_0e86b56d2f8130106daee36ef699b6a1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-06-29 17:03:55</sys_updated_on><values_modified_at>2021-06-29 17:03:55</values_modified_at></pa_targets></record_update>]]></payload>
+        <payload_hash>-1542307216</payload_hash>
+        <record_name>7044292d2f4130106daee36ef699b60f</record_name>
+        <reverted_from/>
+        <source>94e6e1d02fc13010100ad49df699b6bf</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 17:03:55</sys_created_on>
+        <sys_id>f4a6316d2f8130106daee36ef699b698</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a58ba32ff0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-29 17:03:55</sys_updated_on>
+        <type>Target</type>
+        <update_guid>30a6316dbb813010e01520d661299f98</update_guid>
+        <update_guid_history>30a6316dbb813010e01520d661299f98:-1542307216,ce86b56ddb81301008615eb23a6119a6:-1583436075,c286b56dd7813010a80ff0e1409dd9a3:1759759211</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="NeedIt: Active Weekly">f3e7e38b2f2130106daee36ef699b62b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-29 13:41:13</sys_created_on>
+        <sys_db_object display_value="" name="pa_targets">pa_targets</sys_db_object>
+        <sys_id>09df1e30bb3746d284411615f0aa54e4</sys_id>
+        <sys_metadata>0e86b56d2f8130106daee36ef699b6a1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>7044292d2f4130106daee36ef699b60f</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete/>
+        <sys_update_name>pa_targets_0e86b56d2f8130106daee36ef699b6a1</sys_update_name>
+        <sys_update_version display_value="pa_targets_0e86b56d2f8130106daee36ef699b6a1">f4a6316d2f8130106daee36ef699b698</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-29 13:41:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
